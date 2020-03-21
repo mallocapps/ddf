@@ -13,6 +13,14 @@ class DDF {
         }
     }
 
+    debug() {
+        return {
+            username: this.username,
+            isTesting: this.isTesting,
+            host: this.host,
+        }
+    }
+
     /**
      * Login
      *
@@ -42,6 +50,8 @@ class DDF {
      * @returns {Promise<*>}
      */
     async searchByLastUpdated(lastUpdated, page) {
+        await this.login();
+
         try {
             let offset = (page - 1) * 100 + 1;
             let searchRequest = DigestRequest(this.username, this.password);
@@ -67,6 +77,8 @@ class DDF {
      * @returns {Promise<*>}
      */
     async searchById(ID) {
+        await this.login();
+
         try {
             let searchRequest = DigestRequest(this.username, this.password);
             let searchResponse = await searchRequest.requestAsync({
@@ -90,6 +102,7 @@ class DDF {
      * @returns {Promise<*>}
      */
     async masterPull() {
+        await this.login();
         return await this.searchById("*");
     }
 
