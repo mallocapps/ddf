@@ -1,0 +1,23 @@
+{
+  "name": "@mallocapps/ddf",
+  "version": "1.0.0",
+  "main": "ddf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mallocapps/ddf.git"
+  },
+  "author": "Scott W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mallocapps/ddf/issues"
+  },
+  "homepage": "https://github.com/mallocapps/ddf#readme",
+  "dependencies": {
+    "request-digest": "^1.0.13"
+  },
+  "devDependencies": {},
+  "description": ""
+}
